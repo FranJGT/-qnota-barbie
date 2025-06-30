@@ -6,14 +6,14 @@
 }
 
 :root {
-    /* Barbie Color Palette */
-    --barbie-pink: #FF69B4;
-    --barbie-pink-light: #FFB6C1;
-    --barbie-pink-dark: #FF1493;
-    --barbie-purple: #DDA0DD;
-    --barbie-lavender: #E6E6FA;
-    --barbie-gold: #FFD700;
-    --barbie-gold-light: #FFF8DC;
+    /* Princess Color Palette */
+    --princess-pink: #FF69B4;
+    --princess-pink-light: #FFB6C1;
+    --princess-pink-dark: #FF1493;
+    --princess-purple: #DDA0DD;
+    --princess-lavender: #E6E6FA;
+    --princess-gold: #FFD700;
+    --princess-gold-light: #FFF8DC;
     --white: #FFFFFF;
     --black: #2C2C2C;
     --gray-light: #F8F9FA;
@@ -28,9 +28,9 @@
     --shadow-heavy: 0 8px 30px rgba(255, 105, 180, 0.2);
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--barbie-pink) 0%, var(--barbie-purple) 100%);
-    --gradient-secondary: linear-gradient(135deg, var(--barbie-pink-light) 0%, var(--barbie-lavender) 100%);
-    --gradient-gold: linear-gradient(135deg, var(--barbie-gold) 0%, var(--barbie-gold-light) 100%);
+    --gradient-primary: linear-gradient(135deg, var(--princess-pink) 0%, var(--princess-purple) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--princess-pink-light) 0%, var(--princess-lavender) 100%);
+    --gradient-gold: linear-gradient(135deg, var(--princess-gold) 0%, var(--princess-gold-light) 100%);
     --gradient-success: linear-gradient(135deg, var(--success) 0%, #20C997 100%);
     --gradient-danger: linear-gradient(135deg, var(--danger) 0%, #E83E8C 100%);
 }
@@ -39,7 +39,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background: var(--gradient-secondary);
     min-height: 100vh;
-    color: var(--black);
+    color: var(--princess-pink-dark);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -146,7 +146,7 @@ body {
 .title {
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
-    color: var(--barbie-pink-dark);
+    color: var(--princess-pink-dark);
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
 }
@@ -217,7 +217,7 @@ body {
 
 .section-title {
     font-size: 1.3rem;
-    color: var(--barbie-pink-dark);
+    color: var(--princess-pink-dark);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -226,7 +226,7 @@ body {
 }
 
 .section-title i {
-    color: var(--barbie-pink);
+    color: var(--princess-pink);
     font-size: 1.2rem;
 }
 
@@ -251,7 +251,7 @@ body {
 }
 
 .radio-option:hover {
-    background: var(--barbie-lavender);
+    background: var(--princess-lavender);
     transform: translateY(-2px);
     box-shadow: var(--shadow-light);
 }
@@ -263,15 +263,15 @@ body {
 .radio-custom {
     width: 20px;
     height: 20px;
-    border: 3px solid var(--barbie-pink);
+    border: 3px solid var(--princess-pink);
     border-radius: 50%;
     position: relative;
     transition: all 0.3s ease;
 }
 
 .radio-option input[type="radio"]:checked + .radio-custom {
-    background: var(--barbie-pink);
-    border-color: var(--barbie-pink);
+    background: var(--princess-pink);
+    border-color: var(--princess-pink);
 }
 
 .radio-option input[type="radio"]:checked + .radio-custom::after {
@@ -287,7 +287,7 @@ body {
 }
 
 .radio-option input[type="radio"]:checked ~ .radio-label {
-    color: var(--barbie-pink-dark);
+    color: var(--princess-pink-dark);
     font-weight: 600;
 }
 
@@ -309,13 +309,13 @@ body {
     align-items: center;
     gap: 8px;
     font-weight: 500;
-    color: var(--barbie-pink-dark);
+    color: var(--princess-pink-dark);
     margin-bottom: 10px;
     font-size: 1rem;
 }
 
 .input-label i {
-    color: var(--barbie-pink);
+    color: var(--princess-pink);
     font-size: 0.9rem;
 }
 
@@ -328,7 +328,7 @@ body {
 .input-field {
     width: 100%;
     padding: 15px 20px;
-    border: 2px solid var(--barbie-lavender);
+    border: 2px solid var(--princess-lavender);
     border-radius: 15px;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
@@ -338,7 +338,7 @@ body {
 }
 
 .input-field:focus {
-    border-color: var(--barbie-pink);
+    border-color: var(--princess-pink);
     box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
     transform: translateY(-1px);
 }
@@ -365,13 +365,13 @@ body {
 }
 
 .tooltip i {
-    color: var(--barbie-pink);
+    color: var(--princess-pink);
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
 .tooltip:hover i {
-    color: var(--barbie-pink-dark);
+    color: var(--princess-pink-dark);
 }
 
 .tooltip-text {
@@ -415,7 +415,7 @@ body {
     align-items: center;
     gap: 10px;
     padding: 20px;
-    background: var(--barbie-lavender);
+    background: var(--princess-lavender);
     border-radius: 15px;
     margin-bottom: 25px;
 }
@@ -435,7 +435,7 @@ body {
 .checkbox-custom {
     width: 20px;
     height: 20px;
-    border: 2px solid var(--barbie-pink);
+    border: 2px solid var(--princess-pink);
     border-radius: 5px;
     position: relative;
     transition: all 0.3s ease;
@@ -443,8 +443,8 @@ body {
 }
 
 .checkbox-option input[type="checkbox"]:checked + .checkbox-custom {
-    background: var(--barbie-pink);
-    border-color: var(--barbie-pink);
+    background: var(--princess-pink);
+    border-color: var(--princess-pink);
 }
 
 .checkbox-option input[type="checkbox"]:checked + .checkbox-custom::after {
@@ -460,14 +460,14 @@ body {
 
 .checkbox-label {
     font-weight: 500;
-    color: var(--barbie-pink-dark);
+    color: var(--princess-pink-dark);
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .checkbox-label i {
-    color: var(--barbie-pink);
+    color: var(--princess-pink);
 }
 
 /* ===== CALCULATE BUTTON ===== */
@@ -666,7 +666,7 @@ body {
 }
 
 .footer-text i {
-    color: var(--barbie-pink);
+    color: var(--princess-pink);
     animation: heartbeat 2s ease-in-out infinite;
 }
 
@@ -680,14 +680,14 @@ body {
 }
 
 .footer-link {
-    color: var(--barbie-pink-dark);
+    color: var(--princess-pink-dark);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-    color: var(--barbie-pink);
+    color: var(--princess-pink);
 }
 
 .footer-subtext {
@@ -799,7 +799,7 @@ body {
 /* ===== FOCUS STYLES ===== */
 button:focus,
 input:focus {
-    outline: 2px solid var(--barbie-pink);
+    outline: 2px solid var(--princess-pink);
     outline-offset: 2px;
 }
 
@@ -813,6 +813,6 @@ input:focus {
     
     .calculator-card {
         box-shadow: none;
-        border: 2px solid var(--barbie-pink);
+        border: 2px solid var(--princess-pink);
     }
 } 

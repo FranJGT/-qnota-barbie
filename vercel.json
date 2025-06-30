@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "qnota-barbie",
+  "name": "notas-princesa",
   "builds": [
     {
       "src": "**/*",

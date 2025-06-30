@@ -81,14 +81,14 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Calculadora de notas qNota Barbie en desktop"
+      "label": "Calculadora de notas Notas de la Princesa en desktop"
     },
     {
       "src": "assets/screenshot-narrow.png",
       "sizes": "750x1334",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Calculadora de notas qNota Barbie en móvil"
+      "label": "Calculadora de notas Notas de la Princesa en móvil"
     }
   ],
   "related_applications": [],

@@ -1,14 +1,14 @@
-# ✨ qNota Barbie - Calculadora de Notas Mágica 💖
+# ✨ Notas de la Princesa - Calculadora de Notas Mágica 💖
 
-Una hermosa calculadora de notas con temática Barbie, diseñada para calcular la nota mínima necesaria en un examen para aprobar un curso universitario.
+Una hermosa calculadora de notas con temática Princesa, diseñada para calcular la nota mínima necesaria en un examen para aprobar un curso universitario.
 
-![qNota Barbie](https://img.shields.io/badge/Version-1.0.0-pink?style=for-the-badge&logo=heart)
+![Notas de la Princesa](https://img.shields.io/badge/Version-1.0.0-pink?style=for-the-badge&logo=heart)
 ![PWA Ready](https://img.shields.io/badge/PWA-Ready-pink?style=for-the-badge&logo=pwa)
 ![Responsive](https://img.shields.io/badge/Responsive-Yes-pink?style=for-the-badge&logo=mobile)
 
 ## 🎯 Características Principales
 
-- **🎨 Diseño Barbie**: Temática rosa, púrpura y dorado con elementos mágicos
+- **🎨 Diseño Princesa**: Temática rosa, púrpura y dorado con elementos mágicos
 - **📱 PWA Completa**: Instalable como aplicación móvil
 - **⚡ Funcionalidad Offline**: Funciona sin conexión a internet
 - **🎯 Cálculo Preciso**: Fórmula matemática exacta para notas de examen
@@ -91,13 +91,13 @@ Nota Examen = 0.5
 
 ## 🎨 Personalización
 
-### Colores Barbie
+### Colores Princesa
 ```css
---barbie-pink: #FF69B4;
---barbie-pink-light: #FFB6C1;
---barbie-purple: #DDA0DD;
---barbie-lavender: #E6E6FA;
---barbie-gold: #FFD700;
+--princess-pink: #FF69B4;
+--princess-pink-light: #FFB6C1;
+--princess-purple: #DDA0DD;
+--princess-lavender: #E6E6FA;
+--princess-gold: #FFD700;
 ```
 
 ### Fuentes
@@ -107,9 +107,9 @@ Nota Examen = 0.5
 ## 📁 Estructura del Proyecto
 
 ```
-qnota-barbie/
+notas-princesa/
 ├── index.html          # Página principal
-├── style.css           # Estilos Barbie
+├── style.css           # Estilos Princesa
 ├── main.js             # Lógica de la calculadora
 ├── manifest.json       # Configuración PWA
 ├── sw.js              # Service Worker
@@ -196,7 +196,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 🙏 Agradecimientos
 
-- **Barbie**: Por la inspiración en el diseño
+- **Princesas**: Por la inspiración en el diseño
 - **Google Fonts**: Por las hermosas tipografías
 - **Font Awesome**: Por los íconos
 - **Comunidad PWA**: Por las mejores prácticas
@@ -213,4 +213,4 @@ Si tienes problemas o sugerencias:
 
 **✨ Hecho con 💖 en Chile ✨**
 
-*¡Que la magia de Barbie te ayude a aprobar todos tus ramos!* 🎓💖 
+*¡Que la magia de la Princesa te ayude a aprobar todos tus ramos!* 🎓💖 

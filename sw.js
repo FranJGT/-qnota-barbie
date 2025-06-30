@@ -1,7 +1,7 @@
-// ===== Service Worker para qNota Barbie =====
+// ===== Service Worker para Notas de la Princesa =====
 // Versión: 1.0.0
 
-const CACHE_NAME = 'qnota-barbie-v1.0.0';
+const CACHE_NAME = 'notas-princesa-v1.0.0';
 const STATIC_CACHE = 'qnota-static-v1.0.0';
 const DYNAMIC_CACHE = 'qnota-dynamic-v1.0.0';
 
@@ -253,7 +253,7 @@ self.addEventListener('push', (event) => {
     };
 
     event.waitUntil(
-        self.registration.showNotification('qNota Barbie', options)
+        self.registration.showNotification('Notas de la Princesa', options)
     );
 });
 
@@ -295,4 +295,4 @@ self.addEventListener('unhandledrejection', (event) => {
     console.error('❌ Promise rechazada en Service Worker:', event.reason);
 });
 
-console.log('✨ Service Worker cargado para qNota Barbie! 💖'); 
+console.log('✨ Service Worker cargado para Notas de la Princesa! 💖'); 
