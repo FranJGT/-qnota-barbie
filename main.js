@@ -1,4 +1,4 @@
-// ===== qNota Barbie - Calculadora de Notas Mágica =====
+// ===== Notas de la Princesa - Calculadora de Notas Mágica =====
 // Desarrollado con 💖 por Francisco González
 
 class QNotaCalculator {
@@ -112,8 +112,12 @@ class QNotaCalculator {
 
     // Validar formulario
     validateForm() {
-        const notaPresentacion = parseFloat(this.elements.notaPresentacion.value);
-        const notaAprobacion = parseFloat(this.elements.notaAprobacion.value);
+        // Convertir comas a puntos y obtener valores
+        const notaPresentacionRaw = this.elements.notaPresentacion.value.replace(',', '.');
+        const notaAprobacionRaw = this.elements.notaAprobacion.value.replace(',', '.');
+        
+        const notaPresentacion = parseFloat(notaPresentacionRaw);
+        const notaAprobacion = parseFloat(notaAprobacionRaw);
         
         const isValid = !isNaN(notaPresentacion) && 
                        !isNaN(notaAprobacion) && 
@@ -148,8 +152,12 @@ class QNotaCalculator {
             return;
         }
 
-        const notaPresentacion = parseFloat(this.elements.notaPresentacion.value);
-        const notaAprobacion = parseFloat(this.elements.notaAprobacion.value);
+        // Convertir comas a puntos y obtener valores
+        const notaPresentacionRaw = this.elements.notaPresentacion.value.replace(',', '.');
+        const notaAprobacionRaw = this.elements.notaAprobacion.value.replace(',', '.');
+        
+        const notaPresentacion = parseFloat(notaPresentacionRaw);
+        const notaAprobacion = parseFloat(notaAprobacionRaw);
         const ponderacion = this.currentPonderacion;
 
         // Fórmula: Nota Examen = (Nota Aprobación - (1 - Ponderación) * Nota Presentación) / Ponderación
@@ -260,7 +268,7 @@ class QNotaCalculator {
         const { notaPresentacion, notaAprobacion, ponderacion, notaExamen } = this.lastResult;
         const ponderacionPorcentaje = Math.round(ponderacion * 100);
         
-        const texto = `📊 Calculé mi nota de examen con qNota Barbie:
+        const texto = `📊 Calculé mi nota de examen con Notas de la Princesa:
         
 📝 Nota de presentación: ${notaPresentacion}
 🎯 Nota de aprobación: ${notaAprobacion}
@@ -274,7 +282,7 @@ ${notaExamen <= 7.0 ? '🎉 ¡Puedo aprobar!' : '😞 Ya reprobé...'}
         try {
             if (navigator.share) {
                 await navigator.share({
-                    title: 'qNota Barbie - Mi Resultado',
+                    title: 'Notas de la Princesa - Mi Resultado',
                     text: texto,
                     url: window.location.href
                 });
@@ -416,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Exponer la calculadora globalmente para debugging
     window.qNotaCalculator = calculator;
     
-    console.log('✨ qNota Barbie inicializada con éxito! 💖');
+    console.log('✨ Notas de la Princesa inicializada con éxito! 💖');
 });
 
 // ===== FUNCIONES UTILITARIAS =====

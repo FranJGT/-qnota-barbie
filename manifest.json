@@ -1,7 +1,7 @@
 {
-  "name": "qNota Barbie - Calculadora de Notas Mágica",
-  "short_name": "qNota Barbie",
-  "description": "Calculadora de notas con temática Barbie - ¡Calcula tu nota de examen de forma mágica y adorable!",
+  "name": "Notas de la Princesa - Calculadora de Notas Mágica",
+  "short_name": "Notas de la Princesa",
+  "description": "Calculadora de notas con temática Princesa - ¡Calcula tu nota de examen de forma mágica y adorable!",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFB6C1",
