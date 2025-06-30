@@ -112,46 +112,31 @@ class QNotaCalculator {
 
     // Validar formulario
     validateForm() {
-        // Convertir comas a puntos y obtener valores
         let notaPresentacionRaw = this.elements.notaPresentacion.value.replace(',', '.');
         let notaAprobacionRaw = this.elements.notaAprobacion.value.replace(',', '.');
-        
-        // Si es un número entero de 2 dígitos (10-70), convertirlo a decimal
+
+        // Rechazar ceros a la izquierda (ej: '05')
+        if (/^0\d$/.test(notaPresentacionRaw)) notaPresentacionRaw = '';
+        if (/^0\d$/.test(notaAprobacionRaw)) notaAprobacionRaw = '';
+
         if (notaPresentacionRaw.length === 2 && /^\d{2}$/.test(notaPresentacionRaw)) {
             const num = parseInt(notaPresentacionRaw);
             if (num >= 10 && num <= 70) {
                 notaPresentacionRaw = (num / 10).toString();
             }
         }
-        
         if (notaAprobacionRaw.length === 2 && /^\d{2}$/.test(notaAprobacionRaw)) {
             const num = parseInt(notaAprobacionRaw);
             if (num >= 10 && num <= 70) {
                 notaAprobacionRaw = (num / 10).toString();
             }
         }
-        
         const notaPresentacion = parseFloat(notaPresentacionRaw);
         const notaAprobacion = parseFloat(notaAprobacionRaw);
-        
-        const isValid = !isNaN(notaPresentacion) && 
-                       !isNaN(notaAprobacion) && 
-                       notaPresentacion >= 1.0 && notaPresentacion <= 7.0 &&
-                       notaAprobacion >= 1.0 && notaAprobacion <= 7.0;
-
+        const isValid = !isNaN(notaPresentacion) && !isNaN(notaAprobacion) && notaPresentacion >= 1.0 && notaPresentacion <= 7.0 && notaAprobacion >= 1.0 && notaAprobacion <= 7.0;
         this.elements.calcularBtn.disabled = !isValid;
-        
-        // Efectos visuales en inputs
-        this.elements.notaPresentacion.style.borderColor = 
-            this.elements.notaPresentacion.value && !isNaN(notaPresentacion) && notaPresentacion >= 1.0 && notaPresentacion <= 7.0 
-                ? '#28A745' 
-                : '#E6E6FA';
-
-        this.elements.notaAprobacion.style.borderColor = 
-            this.elements.notaAprobacion.value && !isNaN(notaAprobacion) && notaAprobacion >= 1.0 && notaAprobacion <= 7.0 
-                ? '#28A745' 
-                : '#E6E6FA';
-
+        this.elements.notaPresentacion.style.borderColor = this.elements.notaPresentacion.value && !isNaN(notaPresentacion) && notaPresentacion >= 1.0 && notaPresentacion <= 7.0 ? '#28A745' : '#E6E6FA';
+        this.elements.notaAprobacion.style.borderColor = this.elements.notaAprobacion.value && !isNaN(notaAprobacion) && notaAprobacion >= 1.0 && notaAprobacion <= 7.0 ? '#28A745' : '#E6E6FA';
         return isValid;
     }
 
@@ -166,40 +151,27 @@ class QNotaCalculator {
             this.mostrarError('Por favor, completa todos los campos correctamente');
             return;
         }
-
-        // Convertir comas a puntos y obtener valores
         let notaPresentacionRaw = this.elements.notaPresentacion.value.replace(',', '.');
         let notaAprobacionRaw = this.elements.notaAprobacion.value.replace(',', '.');
-        
-        // Si es un número entero de 2 dígitos (10-70), convertirlo a decimal
+        if (/^0\d$/.test(notaPresentacionRaw)) notaPresentacionRaw = '';
+        if (/^0\d$/.test(notaAprobacionRaw)) notaAprobacionRaw = '';
         if (notaPresentacionRaw.length === 2 && /^\d{2}$/.test(notaPresentacionRaw)) {
             const num = parseInt(notaPresentacionRaw);
             if (num >= 10 && num <= 70) {
                 notaPresentacionRaw = (num / 10).toString();
             }
         }
-        
         if (notaAprobacionRaw.length === 2 && /^\d{2}$/.test(notaAprobacionRaw)) {
             const num = parseInt(notaAprobacionRaw);
             if (num >= 10 && num <= 70) {
                 notaAprobacionRaw = (num / 10).toString();
             }
         }
-        
         const notaPresentacion = parseFloat(notaPresentacionRaw);
         const notaAprobacion = parseFloat(notaAprobacionRaw);
         const ponderacion = this.currentPonderacion;
-
-        // Fórmula: Nota Examen = (Nota Aprobación - (1 - Ponderación) * Nota Presentación) / Ponderación
         const notaExamen = (notaAprobacion - (1 - ponderacion) * notaPresentacion) / ponderacion;
-
-        this.lastResult = {
-            notaPresentacion,
-            notaAprobacion,
-            ponderacion,
-            notaExamen
-        };
-
+        this.lastResult = { notaPresentacion, notaAprobacion, ponderacion, notaExamen };
         this.mostrarResultado(notaExamen);
         this.guardarEnHistorial();
     }
