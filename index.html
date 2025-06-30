@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ qNota Barbie - Calculadora de Notas Mágica ✨</title>
+    <meta name="description" content="Calculadora de notas con temática Barbie - ¡Calcula tu nota de examen de forma mágica y adorable!">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#FF69B4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="qNota Barbie">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="sparkle">✨</span>
+                    qNota Barbie
+                    <span class="sparkle">✨</span>
+                </h1>
+                <p class="subtitle">Calculadora de Notas Mágica</p>
+            </div>
+        </header>
+
+        <!-- Main Calculator -->
+        <main class="calculator">
+            <div class="calculator-card">
+                <!-- Ponderación Section -->
+                <section class="section ponderacion-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-percentage"></i>
+                        Ponderación del Examen
+                    </h2>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="ponderacion" value="0.3" checked>
+                            <span class="radio-custom"></span>
+                            <span class="radio-label">30%</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ponderacion" value="0.4">
+                            <span class="radio-custom"></span>
+                            <span class="radio-label">40%</span>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Inputs Section -->
+                <section class="section inputs-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-star"></i>
+                        Tus Notas
+                    </h2>
+                    
+                    <div class="input-group">
+                        <label for="notaPresentacion" class="input-label">
+                            <i class="fas fa-graduation-cap"></i>
+                            Nota de Presentación
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="number" 
+                                id="notaPresentacion" 
+                                class="input-field"
+                                placeholder="Ej: 6.5"
+                                min="1.0" 
+                                max="7.0" 
+                                step="0.1"
+                            >
+                            <span class="input-suffix">/ 7.0</span>
+                        </div>
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">Tu nota acumulada hasta ahora en el curso</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="notaAprobacion" class="input-label">
+                            <i class="fas fa-trophy"></i>
+                            Nota de Aprobación Mínima
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="number" 
+                                id="notaAprobacion" 
+                                class="input-field"
+                                placeholder="Ej: 4.0"
+                                min="1.0" 
+                                max="7.0" 
+                                step="0.1"
+                            >
+                            <span class="input-suffix">/ 7.0</span>
+                        </div>
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">La nota mínima que necesitas para aprobar el curso</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Auto-calculate Option -->
+                <section class="section auto-calc-section">
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="autoCalcular">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label">
+                            <i class="fas fa-magic"></i>
+                            Auto-Calcular
+                        </span>
+                    </label>
+                    <div class="tooltip">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltip-text">Calcula automáticamente mientras escribes</span>
+                    </div>
+                </section>
+
+                <!-- Calculate Button -->
+                <section class="section button-section">
+                    <button id="calcularBtn" class="calculate-btn" disabled>
+                        <i class="fas fa-calculator"></i>
+                        <span>Calcular Nota de Examen</span>
+                        <div class="btn-sparkle"></div>
+                    </button>
+                </section>
+
+                <!-- Results Section -->
+                <section class="section results-section" id="resultsSection" style="display: none;">
+                    <h2 class="section-title">
+                        <i class="fas fa-magic"></i>
+                        Resultado Mágico
+                    </h2>
+                    
+                    <div class="result-card" id="resultCard">
+                        <div class="result-icon">
+                            <i class="fas fa-star" id="resultIcon"></i>
+                        </div>
+                        <div class="result-content">
+                            <h3 class="result-title" id="resultTitle">Calculando...</h3>
+                            <p class="result-message" id="resultMessage">Ingresa tus notas para ver el resultado</p>
+                            <div class="result-nota">
+                                <span class="result-label">Nota mínima en el examen:</span>
+                                <span class="result-value" id="resultValue">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Share Button -->
+                    <button id="shareBtn" class="share-btn" style="display: none;">
+                        <i class="fas fa-share-alt"></i>
+                        Compartir Resultado
+                    </button>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Hecho con <i class="fas fa-heart"></i> en Chile por 
+                    <a href="https://github.com/FranJGT" target="_blank" class="footer-link">
+                        Francisco González
+                    </a>
+                </p>
+                <p class="footer-subtext">
+                    <i class="fas fa-shield-alt"></i>
+                    Todos los cálculos se realizan localmente en tu navegador
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-star">⭐</div>
+        <div class="floating-heart">💖</div>
+        <div class="floating-sparkle">✨</div>
+        <div class="floating-star">🌟</div>
+        <div class="floating-heart">💕</div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html> 
