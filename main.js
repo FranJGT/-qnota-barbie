@@ -113,8 +113,23 @@ class QNotaCalculator {
     // Validar formulario
     validateForm() {
         // Convertir comas a puntos y obtener valores
-        const notaPresentacionRaw = this.elements.notaPresentacion.value.replace(',', '.');
-        const notaAprobacionRaw = this.elements.notaAprobacion.value.replace(',', '.');
+        let notaPresentacionRaw = this.elements.notaPresentacion.value.replace(',', '.');
+        let notaAprobacionRaw = this.elements.notaAprobacion.value.replace(',', '.');
+        
+        // Si es un número entero de 2 dígitos (10-70), convertirlo a decimal
+        if (notaPresentacionRaw.length === 2 && /^\d{2}$/.test(notaPresentacionRaw)) {
+            const num = parseInt(notaPresentacionRaw);
+            if (num >= 10 && num <= 70) {
+                notaPresentacionRaw = (num / 10).toString();
+            }
+        }
+        
+        if (notaAprobacionRaw.length === 2 && /^\d{2}$/.test(notaAprobacionRaw)) {
+            const num = parseInt(notaAprobacionRaw);
+            if (num >= 10 && num <= 70) {
+                notaAprobacionRaw = (num / 10).toString();
+            }
+        }
         
         const notaPresentacion = parseFloat(notaPresentacionRaw);
         const notaAprobacion = parseFloat(notaAprobacionRaw);
@@ -153,8 +168,23 @@ class QNotaCalculator {
         }
 
         // Convertir comas a puntos y obtener valores
-        const notaPresentacionRaw = this.elements.notaPresentacion.value.replace(',', '.');
-        const notaAprobacionRaw = this.elements.notaAprobacion.value.replace(',', '.');
+        let notaPresentacionRaw = this.elements.notaPresentacion.value.replace(',', '.');
+        let notaAprobacionRaw = this.elements.notaAprobacion.value.replace(',', '.');
+        
+        // Si es un número entero de 2 dígitos (10-70), convertirlo a decimal
+        if (notaPresentacionRaw.length === 2 && /^\d{2}$/.test(notaPresentacionRaw)) {
+            const num = parseInt(notaPresentacionRaw);
+            if (num >= 10 && num <= 70) {
+                notaPresentacionRaw = (num / 10).toString();
+            }
+        }
+        
+        if (notaAprobacionRaw.length === 2 && /^\d{2}$/.test(notaAprobacionRaw)) {
+            const num = parseInt(notaAprobacionRaw);
+            if (num >= 10 && num <= 70) {
+                notaAprobacionRaw = (num / 10).toString();
+            }
+        }
         
         const notaPresentacion = parseFloat(notaPresentacionRaw);
         const notaAprobacion = parseFloat(notaAprobacionRaw);
